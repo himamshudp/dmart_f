@@ -26,7 +26,7 @@ def dmart():
     product_url = product_list['link'].tolist()
     dmart_df = pd.DataFrame(
         columns=['Product_category', 'product_name', 'Product_o_price', 'product_d_price', 'p_brand'])
-    product_url_try = product_url[:4]
+    #product_url_try = product_url[:4]
     # headless chorme
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--headless")
@@ -41,7 +41,7 @@ def dmart():
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
-    for url in product_url_try:
+    for url in product_url:
         driver.get(url)
         time.sleep(8)  # 2 Sec for ssh
         html = driver.execute_script("return document.documentElement.outerHTML")
