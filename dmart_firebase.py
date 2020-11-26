@@ -197,7 +197,7 @@ def dmart():
 
     firebase_app = firebase_admin.initialize_app(cred, {'storageBucket': f"{PROJECT_ID}.appspot.com"})
 
-    name = '/tmp/dmart_try2.json'
+    name = '/tmp/dmart_scrap.json'
     bucket = storage.bucket()
     blob = bucket.blob(name)
     blob.upload_from_string(json.dumps(data, indent=2))
@@ -205,22 +205,4 @@ def dmart():
     print("file Uploaded")
 
 dmart()
-
-
-# In[4]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
